@@ -1,12 +1,8 @@
-version: '3.3'
+version: '3.4'
 
 services:
-        patterns-webapi:
-                environment:
-                        - ASPNETCORE_ENVIRONMENT=Development
-                ports:
-                        - 8080:80
-
-        reverse-proxy:
-                ports:
-                        - 80:80
+  chefsnacks.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
