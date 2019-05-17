@@ -1,0 +1,30 @@
+version: '3.4'
+    
+networks:
+        patterns-network:
+                driver: 'bridge'
+
+services:
+        chefsnacks-web:
+                image: chefsnacks-web
+                container_name: chefsnacks-web 
+                build:
+                        context: /home/kenerry/workspace/Nginx/
+                        dockerfile: ChefSnacks.Web/Dockerfile
+                depends_on: 
+                       - reverse-proxy
+                networks:
+                        - patterns-network
+
+        reverse-proxy:
+                image: reverse-proxy
+                container_name: reverse-proxy
+                build:
+                        context: /home/kenerry/workspace/Nginx/
+                        dockerfile: ChefSnacks.Web/Nginx/Dockerfile
+                networks:
+                        - patterns-network
+
+                        
+                        
+
