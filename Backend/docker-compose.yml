@@ -6,3 +6,9 @@ services:
     build:
       context: .
       dockerfile: app/ChefSnacks.Web/Dockerfile
+    networks: 
+    - chefsnacks_web
+
+networks:
+  chefsnacks_web:
+    driver: bridge
