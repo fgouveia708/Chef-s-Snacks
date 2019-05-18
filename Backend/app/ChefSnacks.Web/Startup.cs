@@ -32,7 +32,7 @@ namespace ChefSnacks.Web
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Ticket API"
+                    Title = "Chef's Snacks API"
                 });
             });
 
