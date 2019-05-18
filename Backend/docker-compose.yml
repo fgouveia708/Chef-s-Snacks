@@ -20,7 +20,7 @@ services:
     image: chefsnacks
     build:
       context: .
-      dockerfile: app/ChefSnacks.Web/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "3001:80"
     networks:
@@ -30,7 +30,7 @@ services:
     image: chefsnacks
     build:
       context: .
-      dockerfile: app/ChefSnacks.Web/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "3002:80"
     networks:
@@ -40,7 +40,7 @@ services:
     image: chefsnacks
     build:
       context: .
-      dockerfile: app/ChefSnacks.Web/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "3003:80"
     networks:
