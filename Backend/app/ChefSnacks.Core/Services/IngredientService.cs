@@ -31,7 +31,7 @@ namespace ChefSnacks.Core.Services
                     },
                     new Ingredient()
                     {
-                        Id = Guid.Parse("2e7bf943-7b46-42a8-9d53-130ce8eff10f"),
+                        Id = Guid.Parse("65b3e0b6-7e49-45fa-a04b-ecf5851248e8"),
                         Name = "Ovo",
                         Price = 0.8
                     },
