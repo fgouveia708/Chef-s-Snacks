@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using ChefSnacks.Core.Entities.Enum;
+using ChefSnacks.Web.Common.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace ChefSnacks.Web.Controllers
 {
@@ -13,34 +11,15 @@ namespace ChefSnacks.Web.Controllers
     {
         // GET: api/Promotions
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(EnumHelper.Read<Promotion, PromotionAttribute>().Select(s => new
+            {
+                Value = s.Value,
+                Name = s.Name,
+                Description = s.Description
+            }).OrderBy(o => o.Value));
         }
 
-        // GET: api/Promotions/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-        
-        // POST: api/Promotions
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-        
-        // PUT: api/Promotions/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
