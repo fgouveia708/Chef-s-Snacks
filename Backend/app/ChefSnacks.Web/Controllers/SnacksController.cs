@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChefSnacks.Core.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +12,17 @@ namespace ChefSnacks.Web.Controllers
     [Route("api/Snacks")]
     public class SnacksController : Controller
     {
+        private ISnackService snackService;
+
+        public SnacksController(ISnackService snackService)
+        {
+            this.snackService = snackService;
+        }
         // GET: api/Snacks
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(snackService.GetSnacks());
         }
 
         // GET: api/Snacks/5
