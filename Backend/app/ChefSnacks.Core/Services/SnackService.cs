@@ -26,7 +26,7 @@ namespace ChefSnacks.Core.Services
                     Ingredients = ingredients.Where(c =>
                                    c.Id == Guid.Parse("40c8ebe5-1c89-4877-9be2-febf94363dbd") ||
                                    c.Id == Guid.Parse("d26d3c66-ad94-4730-b040-d8842f3476b0") ||
-                                   c.Id == Guid.Parse("2e7bf943-7b46-42a8-9d53-130ce8eff10f")).ToList()
+                                   c.Id == Guid.Parse("2e7bf943-7b46-42a8-9d53-130ce8eff10f")).ToList(),
                 },
                 new Snack() {
                     Id = Guid.Parse("a50495ba-cddc-45fb-b32e-8e9490c9b14c"),
@@ -53,6 +53,11 @@ namespace ChefSnacks.Core.Services
                                    c.Id == Guid.Parse("2e7bf943-7b46-42a8-9d53-130ce8eff10f")).ToList()
                 },
             };
+        }
+
+        public double GetPrice(Guid id)
+        {
+            return GetSnacks().FirstOrDefault(c => c.Id == id).Ingredients.Sum(c => c.Price);
         }
     }
 }
