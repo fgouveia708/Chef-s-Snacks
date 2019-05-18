@@ -14,6 +14,11 @@ RUN dotnet build ChefSnacks.Web.csproj -c Release -o /app
 FROM build AS publish
 RUN dotnet publish ChefSnacks.Web.csproj -c Release -o /app
 
+FROM nginx
+EXPOSE 80
+RUN rm /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .

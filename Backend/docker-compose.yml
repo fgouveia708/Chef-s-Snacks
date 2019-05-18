@@ -1,14 +1,51 @@
 version: '3.4'
 
 services:
-  chefsnacks.web:
-    image: ${DOCKER_REGISTRY-}chefsnacksweb
+  proxy:
+    image: chefsnacks-nginx
+    build:
+      context: .
+    ports:
+      - "3000:80"
+    depends_on:
+      - chefsnacks01
+      - chefsnacks02
+      - chefsnacks03
+    networks:
+      - chefsnacks-network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+  
+  chefsnacks01:
+    image: chefsnacks
     build:
       context: .
       dockerfile: app/ChefSnacks.Web/Dockerfile
-    networks: 
-    - chefsnacks_web
+    ports:
+      - "3001:80"
+    networks:
+      - chefsnacks-network
+  
+  chefsnacks02:
+    image: chefsnacks
+    build:
+      context: .
+      dockerfile: app/ChefSnacks.Web/Dockerfile
+    ports:
+      - "3002:80"
+    networks:
+      - chefsnacks-network
+  
+  chefsnacks03:
+    image: chefsnacks
+    build:
+      context: .
+      dockerfile: app/ChefSnacks.Web/Dockerfile
+    ports:
+      - "3003:80"
+    networks:
+      - chefsnacks-network
 
-networks:
-  chefsnacks_web:
-    driver: bridge
+networks: 
+    chefsnacks-network:
+      driver: bridge
