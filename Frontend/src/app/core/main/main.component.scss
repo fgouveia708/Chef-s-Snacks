@@ -1,0 +1,22 @@
+@import '~ngx-toastr/toastr';
+
+.main{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-content: space-between;
+  background:#F5F3F4 !important;
+  &__header{
+    flex:0;
+  }
+  &__content{
+    flex:1;
+  }
+  &__footer{
+    flex:0;
+  }
+}
+
+body {
+  background:#F5F3F4 !important;
+}
