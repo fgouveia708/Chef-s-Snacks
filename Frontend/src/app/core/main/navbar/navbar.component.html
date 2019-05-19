@@ -1,0 +1,80 @@
+<div class="navbar-fixed">
+  <nav class="hide-on-med-and-down">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">TopSteak</a>
+      <ul id="nav-mobile" href="javascript:void(0)" class="right hide-on-med-and-down">
+      
+        <li>
+          <a [routerLink]=" ['/produtos']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">extension</i>Produtos
+          </a>
+        </li>
+        <li>
+          <a [routerLink]=" ['/categorias']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">description</i>Categorias
+          </a>
+        </li>
+        <li>
+          <a [routerLink]=" ['/condominios']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">domain</i>Condominios
+          </a>
+        </li>
+        <li>
+          <a [routerLink]=" ['/pedidos']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">shopping_basket</i>Pedidos
+          </a>
+        </li>
+        
+        <li>
+          <a [routerLink]=" ['/usuarios']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">people</i>Usuários
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" (click)="logout()">
+            <i class="material-icons left">input</i>Sair
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav class="mobile-nav hide-on-large-only">
+    <div class="nav-wrapper grey darken-2">
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <a [routerLink]=" ['/users']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">home</i>Usuários
+          </a>
+        </li>
+        <li>
+          <a [routerLink]=" ['/products']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">laptop_mac</i>Produtos
+          </a>
+        </li>
+        <li>
+          <a [routerLink]=" ['/consumers']" [routerLinkActive]="['active']" href="javascript:void(0)">
+            <i class="material-icons left">build</i>Compradores
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i [routerLink]=" ['/apartment-complex']" [routerLinkActive]="['active']" class="material-icons left">trending_up</i>Condominios
+          </a>
+        </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="material-icons left">input</i>Sair
+          </a>
+        </li>
+      </ul>
+      <a materialize="sideNav" [materializeParams]="[{edge:'left',closeOnClick:true}]" href="javascript:void(0)" data-activates="slide-out"
+        class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+</div>
