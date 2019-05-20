@@ -7,14 +7,12 @@ Chef's Snacks é uma aplicação demonstrativa que visa mostrar técnicas de arq
 
 [TOC]
 
-###Introdução
-                
-----
+### Introdução
+
 A ideia é criar uma aplicação web para uma startup do ramo de alimentos que precisa gerir seu negócio. A especialidade é a venda de lanches, de modo que alguns lanches são opções de cardápio e outros podem conter ingredientes personalizados.
 
-###Requisitos técnicos
+### Requisitos técnicos
                 
-----
 - Visual Studio Code;
 - .NET Core;
 - Angular 7;
@@ -22,10 +20,8 @@ A ideia é criar uma aplicação web para uma startup do ramo de alimentos que p
 - Nginx;
 - Jenkins.
 
-###Briefing
+### Briefing
                 
-----
-
 Somos uma startup do ramo de alimentos e precisamos de uma aplicação web para gerir nosso negócio. Nossa especialidade é a venda de lanches, de modo que alguns lanches são opções de cardápio e outros podem conter ingredientes personalizados.
 
 A seguir, apresentamos a lista de ingredientes disponíveis:
@@ -93,27 +89,24 @@ Difícil:
 - Ambiente virtualizado em Docker com scripts para execução.
 
 
-###Backend
+### Backend
                 
-----
-
 Chef’s Snack possui uma arquitetura de dependência invertida e pouco acoplada, conhecida também como Arquitetura Onion e uma estrutura de solução básica que possa ser usada para construir aplicativos SOLID baseados em Domain-Driven Design (DDD). 
 
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/onion.png)
 
 
-###Frontend
+### Frontend
                 
-----
 A ideia é criar uma aplicação web para uma startup 
 
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/frontend.png)
 
-###Deploy
+### Deploy
                 
-----
 A ideia é criar uma aplicação web para uma startup 
-####Docker
+
+### Docker
 
 A ideia é criar uma aplicação web para uma startup `docker-compose.yml`
 
@@ -171,7 +164,7 @@ networks:
       driver: bridge
 ```
 
-####Nginx
+### Nginx
 
 A ideia é criar uma aplicação web para uma startup `nginx.config`
 ```
@@ -196,7 +189,7 @@ http {
     }
 }
 ```
-####Jenkins
+### Jenkins
 
 A ideia é criar uma aplicação web para uma startup  `JenkinsPipelineScripts.txt`
 
