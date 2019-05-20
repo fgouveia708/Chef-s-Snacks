@@ -111,11 +111,7 @@ Acesse todos os serviços através do Swagger `http://localhost/swagger/index.ht
                 
 Chef’s Snack possui um Frontend modular desenvolvido em Angular 7 e Bootstrap.
 
-```mermaid
-graph LR
-A[Client]  --> B[Frontend]
-B[Frontend]  --> C[Backend]
-```
+![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/fluxo.png)
 
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/frontend.png)
 
@@ -132,7 +128,7 @@ ng serve
 
 ### Deploy
                 
-A ideia é criar uma aplicação web para uma startup 
+O Chef's Snacks adotou como prática de desenvolvimento de DevOps o Continuous integration, em que os desenvolvedores, juntam suas alterações de código em um repositório central. Depois disso, builds e testes são executados. Os principais objetivos do Continuous integration são encontrar e investigar bugs mais rapidamente, melhorar a qualidade do software e reduzir o tempo que leva para validar e lançar novas atualizações de software.
 
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/deploy.png)
 
@@ -220,9 +216,20 @@ http {
     }
 }
 ```
+
+__EXECUÇÃO__
+
+Para executar o Docker e o Nginx acesse o diretório `raiz` via prompt e execute os seguintes comandos:
+
+```
+docker-compose -f backend/docker-compose.yml build
+
+```
+
+
 ### Jenkins
 
-Configuração do Pipeline Jenkins através do script disponibilizado no arquivo   `JenkinsPipelineScripts.txt`
+O Chef's Snack adotou o Jenkins como ferramenta de Continuous integration e automação de deploys. Para configurar o Pipeline Jenkins  utilize o seguinte script disponibilizado no arquivo  `JenkinsPipelineScripts.txt`
 
 ```
 node{ 
