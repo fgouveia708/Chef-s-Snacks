@@ -5,20 +5,20 @@
 
 Chef's Snacks é uma aplicação demonstrativa que visa mostrar técnicas de arquitetura, desenvolvimento e distribuição de software utilizando ferramentas como .NET Core, Angular 7, Bootstrap, Docker, Nginx e Jenkins.
 
-[TOC]
+[Chef's Snacks](https://github.com/fgouveia708/Chef-s-Snacks#chefs-snacks)
+    [Introdução](https://github.com/fgouveia708/Chef-s-Snacks#introdu%C3%A7%C3%A3o)
+    [Briefing](https://github.com/fgouveia708/Chef-s-Snacks#briefing)
+    [Requisitos técnicos](https://github.com/fgouveia708/Chef-s-Snacks#requisitos-t%C3%A9cnicos)
+    [Backend](https://github.com/fgouveia708/Chef-s-Snacks#backend)
+    [Frontend](https://github.com/fgouveia708/Chef-s-Snacks#frontend)
+    [Deploy](https://github.com/fgouveia708/Chef-s-Snacks#deploy)
+        [Docker](https://github.com/fgouveia708/Chef-s-Snacks#docker)
+        [Nginx](https://github.com/fgouveia708/Chef-s-Snacks#nginx)
+        [Jenkins](https://github.com/fgouveia708/Chef-s-Snacks#jenkins)
 
 ### Introdução
 
 A ideia é criar uma aplicação web para uma startup do ramo de alimentos que precisa gerir seu negócio. A especialidade é a venda de lanches, de modo que alguns lanches são opções de cardápio e outros podem conter ingredientes personalizados.
-
-### Requisitos técnicos
-                
-- Visual Studio Code;
-- .NET Core;
-- Angular 7;
-- Docker;
-- Nginx;
-- Jenkins.
 
 ### Briefing
                 
@@ -88,6 +88,14 @@ Difícil:
 - O ambiente de execução da aplicação deve possuir um HTTP Proxying com nginx, redirecimendo as requisições da porta 80 para o server-side;
 - Ambiente virtualizado em Docker com scripts para execução.
 
+### Requisitos técnicos
+                
+- Visual Studio Code;
+- .NET Core;
+- Angular 7;
+- Docker;
+- Nginx;
+- Jenkins.
 
 ### Backend
                 
