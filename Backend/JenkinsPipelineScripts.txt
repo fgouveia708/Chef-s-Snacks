@@ -1,0 +1,29 @@
+node{ 
+  
+    stage('Checkout') {
+        git 'https://github.com/fgouveia708/Chef-s-Snacks.git'
+    } 
+    
+    stage('Build'){ 
+        bat 'docker-compose -f backend/docker-compose.yml build' 
+    } 
+    
+    stage('Test'){
+        dir("backend") {
+            dir("app") {
+                dir("ChefSnacks.Test") {
+                       bat 'dotnet test' 
+                }
+            }  
+        }
+    }
+    
+    stage('Deploy'){
+        bat 'docker-compose -f backend/docker-compose.yml down --remove-orphans' 
+        dir("backend") {
+            bat 'docker-compose up -d' 
+            bat 'docker ps -a' 
+        }
+        
+    }   
+}
