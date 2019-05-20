@@ -16,7 +16,7 @@ namespace ChefSnacks.Test
             this.ingredientService = new IngredientService();
         }
 
-        public Ingredient CreateIngredientValid()
+        public Ingredient CreateIngredientPromotionValid()
         {
             return new Ingredient()
             {
@@ -24,6 +24,17 @@ namespace ChefSnacks.Test
                 Name = "Hambúrguer de carne",
                 Price = 3,
                 Promotion = Core.Entities.Enum.Promotion.ExtraMeat
+            };
+        }
+
+        public Ingredient CreateIngredientValid()
+        {
+            return new Ingredient()
+            {
+                Id = Guid.Parse("65b3e0b6-7e49-45fa-a04b-ecf5851248e8"),
+                Name = "Ovo",
+                Price = 0.8,
+                Promotion = Core.Entities.Enum.Promotion.None
             };
         }
 
@@ -80,7 +91,7 @@ namespace ChefSnacks.Test
         public void When_Call_GetPricePromotion_Passing_Ingredient_Entity_And_Amount_Less_Than_3()
         {
             //arrange
-            var ingredient = CreateIngredientValid();
+            var ingredient = CreateIngredientPromotionValid();
             var amount = 2;
 
             //act
@@ -94,7 +105,7 @@ namespace ChefSnacks.Test
         public void When_Call_GetPricePromotion_Passing_Ingredient_Entity_And_Amount_Equals_3()
         {
             //arrange
-            var ingredient = CreateIngredientValid();
+            var ingredient = CreateIngredientPromotionValid();
             var amount = 3;
 
             //act
@@ -108,7 +119,7 @@ namespace ChefSnacks.Test
         public void When_Call_GetPricePromotion_Passing_Ingredient_Entity_And_Amount_Greater_Than_3()
         {
             //arrange
-            var ingredient = CreateIngredientValid();
+            var ingredient = CreateIngredientPromotionValid();
             var amount = 4;
 
             //act
@@ -116,6 +127,20 @@ namespace ChefSnacks.Test
 
             //assert
             Assert.Equal(result, (ingredient.Price * (amount - (int)(amount / 3))));
+        }
+
+        [Fact]
+        public void When_Call_GetPricePromotion_Passing_Ingredient_Entity_Not_Promotion()
+        {
+            //arrange
+            var ingredient = CreateIngredientValid();
+            var amount = 4;
+
+            //act
+            var result = ingredientService.GetPricePromotion(ingredient, amount);
+
+            //assert
+            Assert.Equal(result, (ingredient.Price * amount));
         }
 
         [Fact]

@@ -3,12 +3,13 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Chef's Snacks</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc.
-        Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-      </p>
+      <p class="lead text-muted">Chef's Snacks é uma aplicação demonstrativa que visa mostrar técnicas de arquitetura,
+        desenvolvimento e distribuição de software utilizando ferramentas como .NET Core, Angular 7, Bootstrap, Docker,
+        Nginx e Jenkins.</p>
+      <p class="lead text-muted">A ideia é criar uma aplicação web para uma startup do ramo de
+        alimentos que precisa gerir seu negócio. A especialidade é a venda de lanches, de modo que alguns lanches são
+        opções de cardápio e outros podem conter ingredientes personalizados.</p>
+      <hr />
     </div>
   </section>
 
@@ -43,10 +44,18 @@
             href="#">Personalize seu Lanche</button>
         </div>
       </div>
-      <div class="card col-md-6 offset-md-3" *ngIf="customSnack">
+      <div class="card col-md-8 offset-md-2" *ngIf="customSnack">
         <div class="card-body">
           <h5 class="card-title">Personalizar seu Lanche</h5>
+          <div class="row">
+            <div class="col-md-12" style="margin-top:40px; margin-bottom: 40px;">
 
+              <h5>PROMOÇÕES</h5>
+              <span class="badge badge-primary">PROMOÇÃO EXTRA DE CARNE: Compre 3 e pague 2</span><br />
+              <span class="badge badge-warning">PROMOÇÃO EXTRA DE QUEIJO: Compre 3 e pague 2</span>
+              <span class="badge badge-success">PROMOÇÃO VIVA MAIS: Compre 1 lanche light e ganhe 10% de desconto</span>
+            </div>
+          </div>
           <div class="row" *ngIf="ingredients && ingredients.length > 0">
             <div class="col-md-12">
               <table class="table table-striped table-bordered">
@@ -63,16 +72,27 @@
                     <td><input type="number" pattern="[0-9]*" (keyup)="onKey($event, item.Id, item.Price)" value="0"
                         class="form-control"></td>
                     <td>{{item.Name}}</td>
-                    <td>{{item.Price |  currency }}</td>
-                    <td>{{item.Total |  currency }}</td>
+                    <td>{{item.Price |  currency}}</td>
+                    <td>{{item.SubTotal |  currency}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 offset-md-3 text-center" style="margin-top:40px; margin-bottom: 40px;">
-              <button class="btn btn-primary btn-lg btn-block text-center"  (click)="save()" >Fazer pedido</button>
+            <div class="col-md-12 text-right" style="margin-top:40px; margin-bottom: 40px;" *ngIf="showCalc">
+              <button class="btn btn-secondary text-center" (click)="calc()">Calcular valores</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center" style="margin-top:40px; margin-bottom: 40px;" *ngIf="showTotal">
+              <h4 class="text-center text-uppercase">Total: {{total |  currency}}</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 text-center" style="margin-top:40px; margin-bottom: 40px;"
+              *ngIf="showTotal">
+              <button class="btn btn-primary btn-lg btn-block text-center" (click)="save()">Fazer pedido</button>
             </div>
           </div>
         </div>

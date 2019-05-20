@@ -7,7 +7,7 @@ namespace ChefSnacks.Core.Entities.Enum
         [Promotion(Name = "Nenhuma", Description = "")]
         None = 0,
 
-        [Promotion(Name = "Light", Description = "PROMOÇÃO VIVA MAIS: Por escolher lanche light você ganhou 10% de desconto.")]
+        [Promotion(Name = "Light", Description = "PROMOÇÃO VIVA MAIS: Compre 1 lanche light e ganhe 10% de desconto")]
         Light = 1,
 
         [Promotion(Name = "Muita Carne", Description = "PROMOÇÃO EXTRA DE CARNE: Compre 3 e pague 2")]

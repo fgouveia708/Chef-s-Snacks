@@ -58,7 +58,7 @@ namespace ChefSnacks.Core.Services
                 return entity.Price * (amount - discount);
             }
 
-            return entity.Price;
+            return (entity.Price * amount);
         }
 
         public double GetPricePromotion(IList<Ingredient> entities, double total)
