@@ -111,9 +111,11 @@ Acesse todos os serviços através do Swagger `http://localhost/swagger/index.ht
                 
 Chef’s Snack possui um Frontend modular desenvolvido em Angular 7 e Bootstrap.
 
-![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/fluxo.png)
-
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/frontend.png)
+
+__FLUXO__
+
+![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/fluxo.png)
 
 __EXECUÇÃO__
 
