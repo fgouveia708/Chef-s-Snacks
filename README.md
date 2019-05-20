@@ -109,9 +109,26 @@ Acesse todos os serviços através do Swagger `http://localhost/swagger/index.ht
 
 ### Frontend
                 
-A ideia é criar uma aplicação web para uma startup 
+Chef’s Snack possui um Frontend modular desenvolvido em Angular 7 e Bootstrap.
+
+```mermaid
+graph LR
+A[Client]  --> B[Frontend]
+B[Frontend]  --> C[Backend]
+```
 
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/frontend.png)
+
+__EXECUÇÃO__
+
+Para executar o Chef's Snacks Frontend acesse o diretório `Frontend` via prompt e execute os seguintes comandos:
+
+```
+npm install
+
+ng serve
+
+```
 
 ### Deploy
                 
@@ -121,7 +138,7 @@ A ideia é criar uma aplicação web para uma startup
 
 ### Docker
 
-A ideia é criar uma aplicação web para uma startup `docker-compose.yml`
+Configuração Docker através do arquivo `docker-compose.yml`
 
 ```
 version: '3.4'
@@ -132,7 +149,7 @@ services:
     build:
       context: .
     ports:
-      - "3000:80"
+      - "80:80"
     depends_on:
       - chefsnacks01
       - chefsnacks02
@@ -179,7 +196,8 @@ networks:
 
 ### Nginx
 
-A ideia é criar uma aplicação web para uma startup `nginx.config`
+Configuração Nginx através do arquivo `nginx.config`
+
 ```
 worker_processes 4;
 
@@ -204,7 +222,7 @@ http {
 ```
 ### Jenkins
 
-A ideia é criar uma aplicação web para uma startup  `JenkinsPipelineScripts.txt`
+Configuração do Pipeline Jenkins através do script disponibilizado no arquivo   `JenkinsPipelineScripts.txt`
 
 ```
 node{ 
