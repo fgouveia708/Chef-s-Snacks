@@ -103,6 +103,9 @@ Chef’s Snack possui uma arquitetura de dependência invertida e pouco acoplada
 
 ![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/onion.png)
 
+Acesse todos os serviços através do Swagger `http://localhost:3000/swagger/index.html`:
+
+![](https://raw.githubusercontent.com/fgouveia708/Chef-s-Snacks/master/Frontend/src/assets/swagger.png)
 
 ### Frontend
                 
