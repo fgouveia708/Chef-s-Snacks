@@ -5,16 +5,16 @@
 
 Chef's Snacks é uma aplicação demonstrativa que visa mostrar técnicas de arquitetura, desenvolvimento e distribuição de software utilizando ferramentas como .NET Core, Angular 7, Bootstrap, Docker, Nginx e Jenkins.
 
-[Chef's Snacks](https://github.com/fgouveia708/Chef-s-Snacks#chefs-snacks)
-    [Introdução](https://github.com/fgouveia708/Chef-s-Snacks#introdu%C3%A7%C3%A3o)
-    [Briefing](https://github.com/fgouveia708/Chef-s-Snacks#briefing)
-    [Requisitos técnicos](https://github.com/fgouveia708/Chef-s-Snacks#requisitos-t%C3%A9cnicos)
-    [Backend](https://github.com/fgouveia708/Chef-s-Snacks#backend)
-    [Frontend](https://github.com/fgouveia708/Chef-s-Snacks#frontend)
-    [Deploy](https://github.com/fgouveia708/Chef-s-Snacks#deploy)
-        [Docker](https://github.com/fgouveia708/Chef-s-Snacks#docker)
-        [Nginx](https://github.com/fgouveia708/Chef-s-Snacks#nginx)
-        [Jenkins](https://github.com/fgouveia708/Chef-s-Snacks#jenkins)
+- [Chef's Snacks](https://github.com/fgouveia708/Chef-s-Snacks#chefs-snacks)
+    - [Introdução](https://github.com/fgouveia708/Chef-s-Snacks#introdu%C3%A7%C3%A3o)
+    - [Briefing](https://github.com/fgouveia708/Chef-s-Snacks#briefing)
+    - [Requisitos técnicos](https://github.com/fgouveia708/Chef-s-Snacks#requisitos-t%C3%A9cnicos)
+    - [Backend](https://github.com/fgouveia708/Chef-s-Snacks#backend)
+    - [Frontend](https://github.com/fgouveia708/Chef-s-Snacks#frontend)
+    - [Deploy](https://github.com/fgouveia708/Chef-s-Snacks#deploy)
+        - [Docker](https://github.com/fgouveia708/Chef-s-Snacks#docker)
+        - [Nginx](https://github.com/fgouveia708/Chef-s-Snacks#nginx)
+        - [Jenkins](https://github.com/fgouveia708/Chef-s-Snacks#jenkins)
 
 ### Introdução
 
