@@ -42,7 +42,7 @@ export class OrderComponent implements OnInit {
     this.showTotal = true;
   }
 
-  onKey(event: any, id: string, price: number) {
+  onKey(event: any, id: string) {
     var amount = event.target.value;
 
     if (amount != null && amount != 0) {
@@ -68,7 +68,7 @@ export class OrderComponent implements OnInit {
       }
     },
       error => {
-        this.toastr.error(error);
+        this.toastr.error("Erro na comunicação com o servidor.");
       });
   }
 
@@ -77,7 +77,7 @@ export class OrderComponent implements OnInit {
       this.ingredients = response;
     },
       error => {
-        this.toastr.error(error);
+        this.toastr.error("Erro na comunicação com o servidor.");
       });
   }
 
@@ -87,7 +87,7 @@ export class OrderComponent implements OnInit {
         this.snacks[index].Price = response;
     },
       error => {
-        this.toastr.error(error);
+        this.toastr.error("Erro na comunicação com o servidor.");
       });
   }
 
@@ -98,7 +98,7 @@ export class OrderComponent implements OnInit {
       }
     },
       error => {
-        this.toastr.error(error);
+        this.toastr.error("Erro na comunicação com o servidor.");
       });
   }
 
@@ -123,7 +123,7 @@ export class OrderComponent implements OnInit {
       }
     },
       error => {
-        this.toastr.error(error);
+        this.toastr.error("Erro na comunicação com o servidor.");
       });
   }
 
@@ -133,7 +133,7 @@ export class OrderComponent implements OnInit {
         this.promotions = response;
     },
       error => {
-        this.toastr.error(error);
+        this.toastr.error("Erro na comunicação com o servidor.");
       });
   }
 }
