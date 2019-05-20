@@ -7,6 +7,6 @@ namespace ChefSnacks.Core.Interfaces
     public interface ISnackService
     {
         IEnumerable<Snack> GetSnacks();
-        double GetPrice(Guid id);
+        double GetPrice(Snack entity);
     }
 }

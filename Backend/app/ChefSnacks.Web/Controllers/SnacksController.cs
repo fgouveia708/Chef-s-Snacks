@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ChefSnacks.Core.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using ChefSnacks.Core.Interfaces;
+using ChefSnacks.Web.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Net;
 
 namespace ChefSnacks.Web.Controllers
 {
@@ -25,29 +25,55 @@ namespace ChefSnacks.Web.Controllers
             return Ok(snackService.GetSnacks());
         }
 
-        // GET: api/Snacks/5
+        // GET: api/Snacks/Price/2e7bf943-7b46-42a8-9d53-130ce8eff10f
         [HttpGet("Price/{id}")]
         public IActionResult Get(Guid id)
         {
-            return Ok(snackService.GetPrice(id));
+            try
+            {
+                var snack = snackService.GetSnacks().FirstOrDefault(c => c.Id == id);
+
+                if (snack == null)
+                    return NotFound();
+
+                var price = snackService.GetPrice(snack);
+
+                return Ok(new
+                {
+                    Price = price,
+                    PriceFormat = price.ToString("C", CultureInfo.CurrentCulture)
+                });
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+
         }
 
-        // POST: api/Snacks
-        [HttpPost]
-        public void Post([FromBody]string value)
+        // GET: api/Snacks/PricePromotion/
+        [HttpGet("PricePromotion")]
+        public IActionResult Get([FromBody]CustomSnackModel model)
         {
+            return Ok();
         }
 
-        // PUT: api/Snacks/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //// POST: api/Snacks
+        //[HttpPost]
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// PUT: api/Snacks/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
+
+        //// DELETE: api/ApiWithActions/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

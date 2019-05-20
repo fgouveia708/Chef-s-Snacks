@@ -55,9 +55,11 @@ namespace ChefSnacks.Core.Services
             };
         }
 
-        public double GetPrice(Guid id)
+        public double GetPrice(Snack entity)
         {
-            return GetSnacks().FirstOrDefault(c => c.Id == id).Ingredients.Sum(c => c.Price);
+            return entity.Ingredients.Sum(c => c.Price);
         }
+
+        
     }
 }

@@ -2,6 +2,7 @@
 using ChefSnacks.Core.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChefSnacks.Core.Services
 {
@@ -42,6 +43,11 @@ namespace ChefSnacks.Core.Services
                         Price = 1.5
                     },
             };
+        }
+
+        public double GetPricePromotion(Guid id, int amount)
+        {
+            throw new NotImplementedException();
         }
     }
 }
