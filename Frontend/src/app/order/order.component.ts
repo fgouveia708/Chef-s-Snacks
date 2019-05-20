@@ -29,8 +29,13 @@ export class OrderComponent implements OnInit {
   save(){
     this.toastr.success("Pedido realizado com sucesso.");
   }
+
   onKey(event: any, id: string, price: number) {
+    var value = event.target.value;
+
+    if(value!=null && value!=0){
     this.ingredients.find(c => c.Id == id).Total = event.target.value * price;
+  }
   }
 
   getSnacks() {

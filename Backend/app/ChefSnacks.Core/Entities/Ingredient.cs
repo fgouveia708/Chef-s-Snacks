@@ -1,4 +1,5 @@
 ﻿using ChefSnacks.Core.Entities.Base;
+using ChefSnacks.Core.Entities.Enum;
 
 namespace ChefSnacks.Core.Entities
 {
@@ -6,5 +7,6 @@ namespace ChefSnacks.Core.Entities
     {
         public string Name { get; set; }
         public double Price { get; set; }
+        public Promotion Promotion { get; set; }
     }
 }

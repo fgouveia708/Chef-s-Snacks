@@ -36,13 +36,7 @@ namespace ChefSnacks.Web.Controllers
                 if (snack == null)
                     return NotFound();
 
-                var price = snackService.GetPrice(snack);
-
-                return Ok(new
-                {
-                    Price = price,
-                    PriceFormat = price.ToString("C", CultureInfo.CurrentCulture)
-                });
+                return Ok(snackService.GetPrice(snack));
             }
             catch (Exception e)
             {
@@ -50,30 +44,5 @@ namespace ChefSnacks.Web.Controllers
             }
 
         }
-
-        // GET: api/Snacks/PricePromotion/
-        [HttpGet("PricePromotion")]
-        public IActionResult Get([FromBody]CustomSnackModel model)
-        {
-            return Ok();
-        }
-
-        //// POST: api/Snacks
-        //[HttpPost]
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT: api/Snacks/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

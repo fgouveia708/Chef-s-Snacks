@@ -4,6 +4,9 @@ namespace ChefSnacks.Core.Entities.Enum
 {
     public enum Promotion
     {
+        [Promotion(Name = "Nenhuma", Description = "")]
+        None = 0,
+
         [Promotion(Name = "Light", Description = "PROMOÇÃO VIVA MAIS: Por escolher lanche light você ganhou 10% de desconto.")]
         Light = 1,
 
