@@ -14,7 +14,7 @@ export class IngredientService {
   ) { }
 
   apiBaseURL = environment.API_URL;
-
+g
   get(): Observable<Ingredient[]> {
     const url = this.apiBaseURL + 'Ingredients';
     return this.client.get<Ingredient[]>(url).pipe(

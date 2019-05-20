@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { IngredientService } from '../shared/service/ingredient.service';
+import { SnackService } from '../shared/service/snack.service';
 
 @Component({
   selector: 'app-order',
@@ -8,14 +10,62 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class OrderComponent implements OnInit {
 
-  constructor(private toastr: ToastrService) { }
+  customSnack: boolean = false;
+  snacks: any[];
+  ingredients: any[];
+  price: Price;
+
+  constructor(
+    private toastr: ToastrService,
+    private ingredientService: IngredientService,
+    private snackService: SnackService
+  ) { }
 
   ngOnInit() {
-    var ss = 1;
-   this.success();
+    this.getSnacks();
+    this.getIngredients();
   }
-success()
-{
-  this.toastr.success('Hello world!', 'Toastr fun!');
-}
+
+  save(){
+    this.toastr.success("Pedido realizado com sucesso.");
+  }
+  onKey(event: any, id: string, price: number) {
+    this.ingredients.find(c => c.Id == id).Total = event.target.value * price;
+  }
+
+  getSnacks() {
+    this.snackService.get().subscribe(response => {
+      this.snacks = response;
+
+      if (this.snacks.length > 0) {
+        for (let index = 0; index < this.snacks.length; index++) {
+          this.getPrice(this.snacks[index].Id, index);
+        }
+      }
+
+    },
+      error => {
+        this.toastr.error(error);
+      });
+
+
+  }
+
+  getIngredients() {
+    this.ingredientService.get().subscribe(response => {
+      this.ingredients = response;
+    },
+      error => {
+        this.toastr.error(error);
+      });
+  }
+  getPrice(id: string, index: number) {
+    this.snackService.getPrice(id).subscribe(response => {
+      if (response != null)
+        this.snacks[index].Price = response;
+    },
+      error => {
+        this.toastr.error(error);
+      });
+  }
 }
