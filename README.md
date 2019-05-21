@@ -136,7 +136,7 @@ O Chef's Snacks adotou como prática de desenvolvimento de DevOps o Continuous i
 
 ### Docker
 
-Configuração Docker através do arquivo `docker-compose.yml`
+Configuração do Docker através do arquivo `docker-compose.yml`
 
 ```
 version: '3.4'
@@ -194,7 +194,7 @@ networks:
 
 ### Nginx
 
-Configuração Nginx através do arquivo `nginx.config`
+Configuração do Nginx através do arquivo `nginx.config`
 
 ```
 worker_processes 4;
