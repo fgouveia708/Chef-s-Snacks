@@ -221,7 +221,7 @@ http {
 
 __EXECUÇÃO__
 
-Para executar o Docker e o Nginx acesse o diretório `raiz` via prompt e execute os seguintes comandos:
+Para executar o Docker e o Nginx acesse o diretório `raiz` via prompt e execute o seguinte comando:
 
 ```
 docker-compose -f backend/docker-compose.yml build
